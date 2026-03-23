@@ -56,7 +56,7 @@ export const Sidebar = () => {
         </div>
 
         <div className="relative group flex justify-center w-full">
-          <Button variant="ghost" className="!w-[42px] !h-[42px] !rounded-full !bg-gray-100 !border-2 !border-white shadow-sm !px-0 !py-0 !flex !items-center !justify-center !overflow-hidden hover:!border-gray-300 transition-all duration-200">
+          <Button variant="ghost" className="!w-[42px] !h-[42px] !bg-gray-100 !border-2 !border-white shadow-sm !px-0 !py-0 !flex !items-center !justify-center !overflow-hidden hover:!border-gray-300 transition-all duration-200">
             <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
           </Button>
           <div className="absolute left-14 top-1/2 -translate-y-1/2 px-2 py-1 bg-gray-900 text-white text-xs font-medium rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap shadow-md pointer-events-none before:content-[''] before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-1 before:border-r-4 before:border-r-gray-900 before:border-y-4 before:border-y-transparent z-[100]">
