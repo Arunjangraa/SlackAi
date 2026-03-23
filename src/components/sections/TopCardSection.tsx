@@ -15,9 +15,9 @@ export const TopCardSection = ({ title, data }: Props) => {
   const chartColor = isPositive ? '#10b981' : '#ef4444';
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col gap-3">
+    <div className="bg-bg-card rounded-2xl border border-border-light shadow-sm p-5 flex flex-col gap-3">
       <div className="flex items-center justify-between mb-1">
-        <h3 className="text-base font-semibold text-gray-800">{title}</h3>
+        <h3 className="text-base font-semibold text-text-heading">{title}</h3>
         <span className={`flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full border ${trendBg} ${trendColor}`}>
           <TrendIcon size={12} strokeWidth={2.5} />
           {data.trend > 0 ? '+' : ''}{data.trend}%
@@ -25,7 +25,7 @@ export const TopCardSection = ({ title, data }: Props) => {
       </div>
 
       <div className="flex items-end justify-between">
-        <span className="text-4xl font-bold text-gray-900 leading-none">
+        <span className="text-4xl font-bold text-text-heading leading-none">
           {data.value}%
         </span>
         <div className="w-32 h-14">

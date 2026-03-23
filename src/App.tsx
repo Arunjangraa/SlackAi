@@ -21,7 +21,7 @@ function App() {
         </div>
 
         {/* Standard Application View (visible only on md screens and larger) */}
-        <div className="hidden md:flex h-screen bg-[#FAFAFA] overflow-hidden w-full">
+        <div className="hidden md:flex h-screen bg-bg-main overflow-hidden w-full">
           <Sidebar />
           <main className="flex-1 h-screen overflow-y-auto">
             <Dashboard />

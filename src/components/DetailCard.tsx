@@ -15,13 +15,13 @@ const MetricRow = ({ label, current, trend, isLaggardRow, index }: MetricRowProp
   const TrendIcon = isPositive ? ArrowUpRight : ArrowDownRight;
   const trendColor = isPositive ? 'text-[#10b981]' : 'text-[#ef4444]';
   const isEven = index % 2 === 0;
-  const bgClass = isEven ? 'bg-[#F9FAFB]' : 'bg-white';
+  const bgClass = isEven ? 'bg-bg-stripe' : 'bg-bg-card';
 
   return (
     <div className={`flex justify-between items-center py-2.5 px-5 -mx-5 ${bgClass}`}>
-      <span className={`text-[13px] ${isLaggardRow ? 'text-[#056B9E] font-medium' : 'text-gray-500 font-medium'}`}>{label}</span>
+      <span className={`text-[13px] ${isLaggardRow ? 'text-brand-blue font-medium' : 'text-text-secondary font-medium'}`}>{label}</span>
       <div className="flex items-center text-[13px]">
-        <span className="font-semibold text-gray-900 w-16 text-right mr-4">{current}</span>
+        <span className="font-semibold text-text-heading w-16 text-right mr-4">{current}</span>
         <span className={`font-medium flex items-center justify-end w-16 ${trendColor}`}>
           <TrendIcon size={14} className="mr-0.5" strokeWidth={2.5} />
           {Math.abs(trend)}%
@@ -48,11 +48,11 @@ export const DetailCard = ({ icon: Icon, title, status, metrics, laggardsTitle, 
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col p-5 pb-3">
+    <div className="bg-bg-card rounded-2xl border border-border-light shadow-sm flex flex-col p-5 pb-3">
       <div className="flex justify-between items-center mb-5">
-        <div className="flex items-center gap-3 text-gray-900 font-semibold text-[15px]">
-          <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center bg-transparent shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-            <Icon size={16} className="text-gray-600" strokeWidth={2.5} />
+        <div className="flex items-center gap-3 text-text-heading font-semibold text-[15px]">
+          <div className="w-8 h-8 rounded-full border border-border-light flex items-center justify-center bg-transparent shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+            <Icon size={16} className="text-text-secondary" strokeWidth={2.5} />
           </div>
           {title}
         </div>
@@ -66,7 +66,7 @@ export const DetailCard = ({ icon: Icon, title, status, metrics, laggardsTitle, 
         </div>
       </div>
 
-      <div className="flex flex-col gap-0 border-b border-gray-50 pb-2 mb-3">
+      <div className="flex flex-col gap-0 border-b border-border-light pb-2 mb-3">
         {metrics.map((m, i) => (
           <MetricRow
             key={i}
@@ -79,7 +79,7 @@ export const DetailCard = ({ icon: Icon, title, status, metrics, laggardsTitle, 
       </div>
 
       <div className="flex justify-between items-center mb-3 mt-1">
-        <span className="text-[13px] font-bold text-gray-800">Top Laggards</span>
+        <span className="text-[13px] font-bold text-text-heading">Top Laggards</span>
         <Dropdown label={laggardsTitle} comingSoon tooltipAlign="right" />
       </div>
 

@@ -8,8 +8,39 @@
   --color-border-light: #E5E7EB;
   --breakpoint-3xl: 1700px;
   --breakpoint-4xl: 2200px;
+  --breakpoint-5xl: 2500px;
+
+  /* Dark Mode Overrides */
+  --color-dark-bg: #0B0A11;
+  --color-dark-card: #151419;
+  --color-dark-border: #1F1E24;
+  --color-dark-text-heading: #FFFFFF;
+  --color-dark-text-secondary: #9CA3AF;
+  
+  --color-bg-main: #FAFAFA;
+  --color-bg-card: #FFFFFF;
+  --color-bg-sidebar: #F6F7F9;
+  --color-bg-stripe: #F9FAFB;
+  --color-bg-hover: #F3F4F6;
 }
 
 :root {
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --color-bg-main: #FAFAFA;
+  --color-bg-card: #FFFFFF;
+  --color-bg-sidebar: #F6F7F9;
+  --color-bg-stripe: #F9FAFB;
+  --color-bg-hover: #F3F4F6;
+}
+
+.dark {
+  --color-brand-blue-muted: #1F2937;
+  --color-text-heading: #FFFFFF;
+  --color-text-secondary: #9CA3AF;
+  --color-border-light: #1F1E24;
+  --color-bg-main: #0B0A11;
+  --color-bg-card: #151419;
+  --color-bg-sidebar: #111016;
+  --color-bg-stripe: #1F1E24;
+  --color-bg-hover: #26252C;
 }

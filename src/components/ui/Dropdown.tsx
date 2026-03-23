@@ -22,10 +22,10 @@ export const Dropdown = ({
 }: DropdownProps) => {
   return (
     <div
-      className={`relative group inline-flex items-center gap-1.5 cursor-pointer px-3 py-1.5 text-[13px] font-medium text-gray-700 border border-gray-200 bg-white rounded-lg hover:bg-gray-50 transition-colors ${className}`}
+      className={`relative group inline-flex items-center gap-1.5 cursor-pointer px-3 py-1.5 text-[13px] font-medium text-text-secondary hover:text-text-heading border border-border-light bg-bg-card rounded-lg hover:bg-bg-hover transition-colors ${className}`}
     >
       {label}
-      <ChevronDown size={13} className="text-gray-400" />
+      <ChevronDown size={13} className="text-text-secondary" />
 
       {comingSoon && (
         <div

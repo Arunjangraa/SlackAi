@@ -18,18 +18,18 @@ export const Dashboard = () => {
   const ActiveComponent = TAB_COMPONENTS[activeTab];
 
   return (
-    <div className="flex flex-col min-h-full relative bg-[#FAFAFA]">
+    <div className="flex flex-col min-h-full relative bg-bg-main">
       <Header data={data} />
 
       <main className="px-6 py-4 max-w-[2500px] w-full mx-auto">
         <BreadcrumbAndTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
         {isLoading ? (
-          <div className="flex flex-col gap-4 bg-white border border-gray-100 p-6 rounded-2xl shadow-sm">
+          <div className="flex flex-col gap-4 bg-bg-card border border-border-light p-6 rounded-2xl shadow-sm">
             <DashboardSkeleton />
           </div>
         ) : data ? (
-          <div className="flex flex-col gap-4 bg-white border border-gray-100 p-6 rounded-2xl shadow-sm">
+          <div className="flex flex-col gap-4 bg-bg-card border border-border-light p-6 rounded-2xl shadow-sm">
             {ActiveComponent && <ActiveComponent />}
           </div>
         ) : (

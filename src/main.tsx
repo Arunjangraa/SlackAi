@@ -5,10 +5,14 @@ import './index.css'
 import App from './App.tsx'
 import { store } from '@store'
 
+import { ThemeProvider } from './context/ThemeProvider'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </Provider>
   </StrictMode>,
 )
