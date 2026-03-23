@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components": ["src/components/index.ts"],
+      "@components/*": ["src/components/*"],
+      "@config": ["src/config/index.ts"],
+      "@config/*": ["src/config/*"],
+      "@constants": ["src/constants/index.ts"],
+      "@constants/*": ["src/constants/*"],
+      "@context": ["src/context/index.ts"],
+      "@context/*": ["src/context/*"],
+      "@hooks": ["src/hooks/index.ts"],
+      "@hooks/*": ["src/hooks/*"],
+      "@layouts": ["src/layouts/index.ts"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages": ["src/pages/index.ts"],
+      "@pages/*": ["src/pages/*"],
+      "@services": ["src/services/index.ts"],
+      "@services/*": ["src/services/*"],
+      "@store": ["src/store/index.ts"],
+      "@store/*": ["src/store/*"],
+      "@styles/*": ["src/styles/*"],
+      "@types": ["src/types/index.ts"],
+      "@types/*": ["src/types/*"],
+      "@utils": ["src/utils/index.ts"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "types": [
+      "vite/client"
+    ],
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": [
+    "src"
+  ]
+}

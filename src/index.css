@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #056B9E;
+  --color-brand-blue-muted: #F0F4F8;
+  --color-text-heading: #0B0A11;
+  --color-text-secondary: #6B7280;
+  --color-border-light: #E5E7EB;
+  --breakpoint-3xl: 1700px;
+  --breakpoint-4xl: 2200px;
+}
+
+:root {
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
