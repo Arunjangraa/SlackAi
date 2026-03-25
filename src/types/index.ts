@@ -34,10 +34,6 @@ export interface PerformanceData {
   operations: DetailSection;
 }
 
-
-
-
-
 export interface DashboardData {
   title: string;
   subtitle: string;

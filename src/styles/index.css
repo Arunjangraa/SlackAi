@@ -16,11 +16,11 @@
   --color-dark-border: #1F1E24;
   --color-dark-text-heading: #FFFFFF;
   --color-dark-text-secondary: #9CA3AF;
-  
+
   --color-bg-main: #FAFAFA;
   --color-bg-card: #FFFFFF;
   --color-bg-sidebar: #F6F7F9;
-  --color-bg-stripe: #F9FAFB;
+  --color-bg-stripe: #F1F3F6;
   --color-bg-hover: #F3F4F6;
 }
 
@@ -29,7 +29,7 @@
   --color-bg-main: #FAFAFA;
   --color-bg-card: #FFFFFF;
   --color-bg-sidebar: #F6F7F9;
-  --color-bg-stripe: #F9FAFB;
+  --color-bg-stripe: #F1F3F6;
   --color-bg-hover: #F3F4F6;
 }
 

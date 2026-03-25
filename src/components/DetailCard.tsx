@@ -42,26 +42,26 @@ export interface DetailCardProps {
 
 export const DetailCard = ({ icon: Icon, title, status, metrics, laggardsTitle, laggards }: DetailCardProps) => {
   const statusStyles = {
-    'Good': 'bg-emerald-50 bg-opacity-60 text-emerald-600 border border-emerald-100',
-    'Medium': 'bg-orange-50 bg-opacity-60 text-orange-600 border border-orange-100',
-    'Poor': 'bg-red-50 bg-opacity-60 text-red-600 border border-red-100',
+    'Good': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20',
+    'Medium': 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20',
+    'Poor': 'bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20',
   };
 
   return (
-    <div className="bg-bg-card rounded-2xl border border-border-light shadow-sm flex flex-col p-5 pb-3">
+    <div className="bg-bg-card rounded-2xl border border-border-light shadow-sm flex flex-col p-5 pb-3 transition-shadow duration-300">
       <div className="flex justify-between items-center mb-5">
         <div className="flex items-center gap-3 text-text-heading font-semibold text-[15px]">
-          <div className="w-8 h-8 rounded-full border border-border-light flex items-center justify-center bg-transparent shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-            <Icon size={16} className="text-text-secondary" strokeWidth={2.5} />
+          <div className="w-8 h-8 rounded-[10px] border border-border-light flex items-center justify-center bg-bg-card transition-colors">
+            <Icon size={16} className="text-brand-blue opacity-80" strokeWidth={2.5} />
           </div>
           {title}
         </div>
         <div className="flex items-center gap-2">
-          <span className={`px-2.5 py-1 rounded-md text-[12px] font-semibold ${statusStyles[status]}`}>
+          <span className={`px-2.5 py-1 rounded-[8px] text-[11px] font-bold uppercase tracking-wider ${statusStyles[status]}`}>
             {status}
           </span>
-          <Button variant="icon" className="!px-0 !py-0 !rounded-md !text-gray-700">
-            <ArrowUpRight size={14} strokeWidth={2} />
+          <Button variant="icon" className="!px-0 !py-0 !rounded-md !text-text-secondary hover:!text-text-heading hover:!bg-bg-hover">
+            <ArrowUpRight size={14} strokeWidth={2.5} />
           </Button>
         </div>
       </div>
@@ -80,7 +80,7 @@ export const DetailCard = ({ icon: Icon, title, status, metrics, laggardsTitle, 
 
       <div className="flex justify-between items-center mb-3 mt-1">
         <span className="text-[13px] font-bold text-text-heading">Top Laggards</span>
-        <Dropdown label={laggardsTitle} comingSoon tooltipAlign="right" />
+        <Dropdown label={laggardsTitle} comingSoon tooltipAlign="end" tooltipPosition="top" />
       </div>
 
       <div className="flex flex-col gap-0">

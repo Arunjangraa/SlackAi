@@ -6,5 +6,4 @@ export * from './SparklineCard';
 export * from './Tabs';
 export * from './TrendLine';
 export * from './ui/index';
-export * from './sections/index';
 export * from './dashboard/index';

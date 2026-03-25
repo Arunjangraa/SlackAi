@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { fetchDashboardData } from '@services';
-import { Header, BreadcrumbAndTabs, OverviewTab, TrafficTab, ConversionTab, OperationsTab, DashboardSkeleton } from '@components';
+import { Header, BreadcrumbAndTabs, OverviewTab, TrafficTab, ConversionTab, OperationsTab } from '@components';
 import type { TabType } from '@constants';
 
 export const Dashboard = () => {
-  const { data, isLoading } = useQuery({ queryKey: ['dashboard'], queryFn: fetchDashboardData });
   const [activeTab, setActiveTab] = useState<TabType>('Overview');
 
   const TAB_COMPONENTS = {
@@ -19,22 +16,21 @@ export const Dashboard = () => {
 
   return (
     <div className="flex flex-col min-h-full relative bg-bg-main">
-      <Header data={data} />
+      <Header
+        title="Category Analysis"
+        subtitle="Health Supplements +3"
+        totalProducts={120}
+        showFilters={true}
+        showDateRange={true}
+        showPlatform={true}
+      />
 
       <main className="px-6 py-4 max-w-[2500px] w-full mx-auto">
         <BreadcrumbAndTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
-        {isLoading ? (
-          <div className="flex flex-col gap-4 bg-bg-card border border-border-light p-6 rounded-2xl shadow-sm">
-            <DashboardSkeleton />
-          </div>
-        ) : data ? (
-          <div className="flex flex-col gap-4 bg-bg-card border border-border-light p-6 rounded-2xl shadow-sm">
-            {ActiveComponent && <ActiveComponent />}
-          </div>
-        ) : (
-          <div className="text-red-500 font-medium">Failed to load data</div>
-        )}
+        <div className="flex flex-col gap-4 bg-bg-card border border-border-light p-6 rounded-2xl shadow-sm">
+          {ActiveComponent && <ActiveComponent />}
+        </div>
       </main>
     </div>
   );

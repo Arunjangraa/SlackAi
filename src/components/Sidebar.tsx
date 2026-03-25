@@ -1,6 +1,6 @@
 import { Settings, Sun, Moon } from 'lucide-react';
 import { navItems } from '@constants';
-import { Button } from '@components';
+import { Button, Tooltip } from '@components';
 import profilePic from '@assets/profile.png';
 import { useTheme } from '../hooks/useTheme';
 export const Sidebar = () => {
@@ -30,25 +30,20 @@ export const Sidebar = () => {
           }
 
           return (
-            <div key={item.id} className="relative group flex justify-center w-full">
+            <Tooltip key={item.id} label="Coming soon" position="right">
               <Button
                 variant="ghost"
                 className="!w-[42px] !h-[42px] !flex !items-center !justify-center !flex-col !rounded-[8px] !text-gray-500 hover:!text-gray-900 hover:!bg-gray-200 transition-all duration-200 !px-0 !py-0"
               >
                 <Icon size={item.iconSize} strokeWidth={1.5} />
               </Button>
-
-              {/* Tooltip */}
-              <div className="absolute left-14 top-1/2 -translate-y-1/2 px-2 py-1 bg-gray-900 text-white text-xs font-medium rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap shadow-md pointer-events-none before:content-[''] before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-1 before:border-r-4 before:border-r-gray-900 before:border-y-4 before:border-y-transparent z-[100]">
-                Coming soon
-              </div>
-            </div>
+            </Tooltip>
           );
         })}
       </nav>
 
-      <div className="flex flex-col items-center gap-4 mt-auto">
-        <div className="relative group flex justify-center w-full">
+      <div className="flex flex-col items-center gap-1 mt-auto">
+        <Tooltip label={theme === 'light' ? 'Dark Mode' : 'Light Mode'} position="right">
           <Button
             variant="ghost"
             onClick={toggleTheme}
@@ -56,28 +51,19 @@ export const Sidebar = () => {
           >
             {theme === 'light' ? <Moon size={20} strokeWidth={1.5} /> : <Sun size={20} strokeWidth={1.5} />}
           </Button>
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 px-2 py-1 bg-gray-900 text-white text-xs font-medium rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap shadow-md pointer-events-none before:content-[''] before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-1 before:border-r-4 before:border-r-gray-900 before:border-y-4 before:border-y-transparent z-[100]">
-            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-          </div>
-        </div>
+        </Tooltip>
 
-        <div className="relative group flex justify-center w-full">
+        <Tooltip label="Coming soon" position="right">
           <Button variant="ghost" className="!w-[42px] !h-[42px] !rounded-[8px] !text-gray-400 !px-0 !py-0 hover:!text-gray-900 hover:!bg-gray-200 transition-all duration-200 !flex !items-center !justify-center">
             <Settings size={20} className="opacity-80" />
           </Button>
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 px-2 py-1 bg-gray-900 text-white text-xs font-medium rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap shadow-md pointer-events-none before:content-[''] before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-1 before:border-r-4 before:border-r-gray-900 before:border-y-4 before:border-y-transparent z-[100]">
-            Coming soon
-          </div>
-        </div>
+        </Tooltip>
 
-        <div className="relative group flex justify-center w-full">
+        <Tooltip label="Coming soon" position="right">
           <Button variant="ghost" className="!w-[42px] !h-[42px] !bg-bg-stripe !border-2 !border-border-light shadow-sm !px-0 !py-0 !flex !items-center !justify-center !overflow-hidden hover:!border-gray-500 transition-all duration-200">
             <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
           </Button>
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 px-2 py-1 bg-gray-900 text-white text-xs font-medium rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap shadow-md pointer-events-none before:content-[''] before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-1 before:border-r-4 before:border-r-gray-900 before:border-y-4 before:border-y-transparent z-[100]">
-            Coming soon
-          </div>
-        </div>
+        </Tooltip>
       </div>
     </aside>
   );
